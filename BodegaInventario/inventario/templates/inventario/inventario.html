@@ -8,38 +8,40 @@
 </body>
 </html>
 -->    
-
 {% extends "BodegaInventarioApp/base.html" %}
 
 {% load static %}
 
 {% block content %}
-
-    {% for inventario in inventario %}
-
-    <!-- Section -->
-  <section class="page-section clearfix">
-        <div class="container">
-            <div class="intro d-flex">
-                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'BodegaInventarioApp/img/principal.jpg' %}" alt="" style="width: 50%; margin-right: 320px;">
-                <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="margin-left: +620px;">
-                    <h2 class="section-heading mb-4">
-                        <span class="section-heading-lower">{{inventario.nombre}}</span>
-                        <span class="section-heading-upper">{{inventario.descripcion}}</span>
-                    </h2>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!--<div>
-    <p>
-    <h2 style="color: white;">{{inventario.nombre}}</h2>
-
-    <p style="color: white;">{{inventario.descripcion}}</p>
-    </p>
+<div class="container mt-5">
+    <h2 class="text-center text-white">Inventario</h2>
+    <table class="table table-bordered table-striped bg-dark text-white">
+        <thead class="thead-dark">
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Cantidad</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+                <th>Precio (L)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in inventario %}
+            <tr>
+                <td>{{ item.id_codigoinv }}</td>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.marca }}</td>
+                <td>{{ item.modelo }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>{{ item.descripcion }}</td>
+                <td>{{ item.fecha }}</td>
+                <td>L {{ item.precio }}</td> <!-- Formato de precio en lempiras -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
--->
-    {% endfor %}
-
 {% endblock %}
