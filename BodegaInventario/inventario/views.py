@@ -7,3 +7,4 @@ def inventario(request):
     inventario = Inventario.objects.all()
     #return render(request, 'BodegaInventarioApp/inventario.html')
     return render(request, 'inventario/inventario.html', {"inventario":inventario})
+

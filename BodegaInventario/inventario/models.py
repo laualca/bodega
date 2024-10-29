@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 #Clase inventario para crear la tabla en la base de datos
 class Inventario(models.Model):
+    id_codigoinv = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=80)
     marca = models.CharField(max_length=80)
     modelo = models.CharField(max_length=80)
@@ -21,3 +22,4 @@ class Inventario(models.Model):
     #Funcion para retornar el nombre del inventario
     def __str__(self):
         return self.nombre
+    
