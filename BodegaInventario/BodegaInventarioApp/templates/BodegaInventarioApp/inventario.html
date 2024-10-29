@@ -15,9 +15,16 @@
 
 {% block content %}
 
+    {% for inventario in inventario %}
+
 <div>
-    <h1>Inventario</h1>
-    <p>Esta es la página de inventario de la aplicación de Bodega Inventario.</p>
+    <p>
+    <h2 style="color: white;">{{inventario.nombre}}</h2>
+
+    <p style="color: white;">{{inventario.descripcion}}</p>
+    </p>
 </div>
+
+    {% endfor %}
 
 {% endblock %}
